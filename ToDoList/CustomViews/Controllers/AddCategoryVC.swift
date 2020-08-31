@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AddCategoryVC.swift
 //  ToDoList
 //
 //  Created by Oscar Martinez on 8/31/20.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class AddCategoryCV: TDAddVC {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configureItems()
     }
-
-
+    
+    
+    private func configureItems() {
+        
+    }
 }
-

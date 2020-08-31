@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		7015E39224FD44960023D3EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E39124FD44960023D3EB /* AppDelegate.swift */; };
 		7015E39424FD44960023D3EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E39324FD44960023D3EB /* SceneDelegate.swift */; };
-		7015E39624FD44960023D3EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E39524FD44960023D3EB /* ViewController.swift */; };
-		7015E39924FD44960023D3EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7015E39724FD44960023D3EB /* Main.storyboard */; };
 		7015E39B24FD449C0023D3EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7015E39A24FD449C0023D3EB /* Assets.xcassets */; };
 		7015E39E24FD449C0023D3EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7015E39C24FD449C0023D3EB /* LaunchScreen.storyboard */; };
+		7015E3A724FD45DE0023D3EB /* CategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3A624FD45DE0023D3EB /* CategoryListVC.swift */; };
+		7015E3AC24FD488D0023D3EB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3AB24FD488D0023D3EB /* Category.swift */; };
+		7015E3AF24FD48F00023D3EB /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3AE24FD48F00023D3EB /* CategoryCell.swift */; };
+		7015E3B124FD49720023D3EB /* TDTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3B024FD49720023D3EB /* TDTitleLabel.swift */; };
+		7015E3B324FD4B9C0023D3EB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3B224FD4B9C0023D3EB /* Item.swift */; };
+		7015E3B624FD4D7C0023D3EB /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3B524FD4D7C0023D3EB /* PersistenceManager.swift */; };
+		7015E3B924FD4E310023D3EB /* TDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3B824FD4E310023D3EB /* TDError.swift */; };
+		7015E3BB24FD5A240023D3EB /* TDBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3BA24FD5A240023D3EB /* TDBodyLabel.swift */; };
+		7015E3BF24FD5C110023D3EB /* TDAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3BE24FD5C110023D3EB /* TDAddVC.swift */; };
+		7015E3C124FD5F9A0023D3EB /* TDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3C024FD5F9A0023D3EB /* TDButton.swift */; };
+		7015E3C324FD620E0023D3EB /* AddCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3C224FD620E0023D3EB /* AddCategoryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7015E38E24FD44960023D3EB /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7015E39124FD44960023D3EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7015E39324FD44960023D3EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7015E39524FD44960023D3EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7015E39824FD44960023D3EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7015E39A24FD449C0023D3EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7015E39D24FD449C0023D3EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7015E39F24FD449C0023D3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7015E3A624FD45DE0023D3EB /* CategoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListVC.swift; sourceTree = "<group>"; };
+		7015E3AB24FD488D0023D3EB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		7015E3AE24FD48F00023D3EB /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		7015E3B024FD49720023D3EB /* TDTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTitleLabel.swift; sourceTree = "<group>"; };
+		7015E3B224FD4B9C0023D3EB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		7015E3B524FD4D7C0023D3EB /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		7015E3B824FD4E310023D3EB /* TDError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDError.swift; sourceTree = "<group>"; };
+		7015E3BA24FD5A240023D3EB /* TDBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDBodyLabel.swift; sourceTree = "<group>"; };
+		7015E3BE24FD5C110023D3EB /* TDAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDAddVC.swift; sourceTree = "<group>"; };
+		7015E3C024FD5F9A0023D3EB /* TDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDButton.swift; sourceTree = "<group>"; };
+		7015E3C224FD620E0023D3EB /* AddCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +76,86 @@
 			children = (
 				7015E39124FD44960023D3EB /* AppDelegate.swift */,
 				7015E39324FD44960023D3EB /* SceneDelegate.swift */,
-				7015E39524FD44960023D3EB /* ViewController.swift */,
-				7015E39724FD44960023D3EB /* Main.storyboard */,
-				7015E39A24FD449C0023D3EB /* Assets.xcassets */,
-				7015E39C24FD449C0023D3EB /* LaunchScreen.storyboard */,
+				7015E3B724FD4E100023D3EB /* Messages */,
+				7015E3AA24FD48770023D3EB /* Model */,
+				7015E3B424FD4D5B0023D3EB /* Managers */,
+				7015E3A824FD46830023D3EB /* CustomViews */,
+				7015E3A524FD44DB0023D3EB /* Supporting files */,
 				7015E39F24FD449C0023D3EB /* Info.plist */,
 			);
 			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		7015E3A524FD44DB0023D3EB /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				7015E39A24FD449C0023D3EB /* Assets.xcassets */,
+				7015E39C24FD449C0023D3EB /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		7015E3A824FD46830023D3EB /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7015E3AD24FD48CD0023D3EB /* CustomsCells */,
+				7015E3A924FD46930023D3EB /* Controllers */,
+				7015E3BC24FD5A940023D3EB /* Labels */,
+				7015E3C024FD5F9A0023D3EB /* TDButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		7015E3A924FD46930023D3EB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7015E3A624FD45DE0023D3EB /* CategoryListVC.swift */,
+				7015E3BE24FD5C110023D3EB /* TDAddVC.swift */,
+				7015E3C224FD620E0023D3EB /* AddCategoryVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7015E3AA24FD48770023D3EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7015E3AB24FD488D0023D3EB /* Category.swift */,
+				7015E3B224FD4B9C0023D3EB /* Item.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7015E3AD24FD48CD0023D3EB /* CustomsCells */ = {
+			isa = PBXGroup;
+			children = (
+				7015E3AE24FD48F00023D3EB /* CategoryCell.swift */,
+			);
+			name = CustomsCells;
+			sourceTree = "<group>";
+		};
+		7015E3B424FD4D5B0023D3EB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7015E3B524FD4D7C0023D3EB /* PersistenceManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		7015E3B724FD4E100023D3EB /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				7015E3B824FD4E310023D3EB /* TDError.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		7015E3BC24FD5A940023D3EB /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				7015E3B024FD49720023D3EB /* TDTitleLabel.swift */,
+				7015E3BA24FD5A240023D3EB /* TDBodyLabel.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +218,6 @@
 			files = (
 				7015E39E24FD449C0023D3EB /* LaunchScreen.storyboard in Resources */,
 				7015E39B24FD449C0023D3EB /* Assets.xcassets in Resources */,
-				7015E39924FD44960023D3EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +228,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7015E39624FD44960023D3EB /* ViewController.swift in Sources */,
 				7015E39224FD44960023D3EB /* AppDelegate.swift in Sources */,
+				7015E3B124FD49720023D3EB /* TDTitleLabel.swift in Sources */,
 				7015E39424FD44960023D3EB /* SceneDelegate.swift in Sources */,
+				7015E3B624FD4D7C0023D3EB /* PersistenceManager.swift in Sources */,
+				7015E3B924FD4E310023D3EB /* TDError.swift in Sources */,
+				7015E3A724FD45DE0023D3EB /* CategoryListVC.swift in Sources */,
+				7015E3B324FD4B9C0023D3EB /* Item.swift in Sources */,
+				7015E3AC24FD488D0023D3EB /* Category.swift in Sources */,
+				7015E3BF24FD5C110023D3EB /* TDAddVC.swift in Sources */,
+				7015E3C124FD5F9A0023D3EB /* TDButton.swift in Sources */,
+				7015E3BB24FD5A240023D3EB /* TDBodyLabel.swift in Sources */,
+				7015E3AF24FD48F00023D3EB /* CategoryCell.swift in Sources */,
+				7015E3C324FD620E0023D3EB /* AddCategoryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7015E39724FD44960023D3EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7015E39824FD44960023D3EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7015E39C24FD449C0023D3EB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oscarmartinezg.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +404,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oscarmartinezg.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
