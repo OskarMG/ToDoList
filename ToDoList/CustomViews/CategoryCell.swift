@@ -32,6 +32,7 @@ class CategoryCell: UITableViewCell {
     private func configure() {
         addSubview(categoryName)
         
+        tintColor               = .systemGreen
         accessoryType           = .disclosureIndicator
         let padding: CGFloat    = 20
         

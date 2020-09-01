@@ -33,7 +33,8 @@ class ItemCell: UITableViewCell {
     private func configure() {
         addSubview(itemName)
         
-        let padding: CGFloat    = 20
+        tintColor            = .systemGreen
+        let padding: CGFloat = 20
         
         NSLayoutConstraint.activate([
             itemName.centerYAnchor.constraint(equalTo: centerYAnchor),

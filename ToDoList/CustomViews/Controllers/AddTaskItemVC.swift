@@ -29,7 +29,10 @@ class AddTaskItemVC: TDAddVC {
         if isTextEntered {
             dismiss(animated: true)
             let item = Item(name: textField.text!, done: false)
-            delegate?.save(item: item)
+            delegate?.saveNew(item: item)
+            return
         }
+        
+        self.presentTDAlertOnMainThread(title: "TextField is Empty", message: "Please introduce a new item.", buttonTitle: "Ok")
     }
 }

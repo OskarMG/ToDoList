@@ -71,7 +71,7 @@ class CategoryListVC: UIViewController {
                 self.categoryList = categories
                 DispatchQueue.main.async { self.tableView.reloadData() }
             case .failure(let error):
-                print(error)
+                self.presentTDAlertOnMainThread(title: "Ups something wen't wrong 😅", message: error.rawValue, buttonTitle: "Ok")
                 break
             }
         }
@@ -94,10 +94,8 @@ extension CategoryListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let category =  categoryList[indexPath.row]
-        
-        let taskItemListVC      = TaskItemListVC(itemList: category.items)
-        taskItemListVC.title    = category.name
+        let category        = categoryList[indexPath.row]
+        let taskItemListVC  = TaskItemListVC(Category: category)
         
         navigationController?.pushViewController(taskItemListVC, animated: true)
     }
@@ -110,9 +108,9 @@ extension CategoryListVC: UITableViewDelegate, UITableViewDataSource {
         tableView.deleteRows(at: [indexPath], with: .left)
         
         PersistenceManager.update(category: category, actionType: .remove) {[weak self] (error) in
-            guard let _ = self else { return }
+            guard let self = self else { return }
             guard let error = error else { return }
-            print(error)
+            self.presentTDAlertOnMainThread(title: "Ups something wen't wrong 😅", message: error.rawValue, buttonTitle: "Ok")
         }
     }
 }
@@ -127,7 +125,7 @@ extension CategoryListVC: CategoryListVCDelegate {
                 return
             }
             
-            print(error)
+            self.presentTDAlertOnMainThread(title: "Ups something wen't wrong 😅", message: error.rawValue, buttonTitle: "Ok")
         }
     }
     

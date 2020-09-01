@@ -26,6 +26,8 @@
 		7015E3C924FE85D80023D3EB /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3C824FE85D80023D3EB /* ItemCell.swift */; };
 		7015E3CB24FE88070023D3EB /* TaskItemListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3CA24FE88060023D3EB /* TaskItemListVC.swift */; };
 		7015E3CD24FE8B0B0023D3EB /* AddTaskItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3CC24FE8B0B0023D3EB /* AddTaskItemVC.swift */; };
+		7015E3CF24FE927D0023D3EB /* TDAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3CE24FE927D0023D3EB /* TDAlertVC.swift */; };
+		7015E3D224FE92DC0023D3EB /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3D124FE92DC0023D3EB /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		7015E3C824FE85D80023D3EB /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		7015E3CA24FE88060023D3EB /* TaskItemListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemListVC.swift; sourceTree = "<group>"; };
 		7015E3CC24FE8B0B0023D3EB /* AddTaskItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskItemVC.swift; sourceTree = "<group>"; };
+		7015E3CE24FE927D0023D3EB /* TDAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDAlertVC.swift; sourceTree = "<group>"; };
+		7015E3D124FE92DC0023D3EB /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			children = (
 				7015E39124FD44960023D3EB /* AppDelegate.swift */,
 				7015E39324FD44960023D3EB /* SceneDelegate.swift */,
+				7015E3D024FE92B20023D3EB /* Ext+Helpers */,
 				7015E3B724FD4E100023D3EB /* Messages */,
 				7015E3AA24FD48770023D3EB /* Model */,
 				7015E3B424FD4D5B0023D3EB /* Managers */,
@@ -123,6 +128,7 @@
 				7015E3BE24FD5C110023D3EB /* TDAddVC.swift */,
 				7015E3C224FD620E0023D3EB /* AddCategoryVC.swift */,
 				7015E3CC24FE8B0B0023D3EB /* AddTaskItemVC.swift */,
+				7015E3CE24FE927D0023D3EB /* TDAlertVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +174,14 @@
 				7015E3BA24FD5A240023D3EB /* TDBodyLabel.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		7015E3D024FE92B20023D3EB /* Ext+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7015E3D124FE92DC0023D3EB /* UIViewController+Ext.swift */,
+			);
+			name = "Ext+Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7015E3D224FE92DC0023D3EB /* UIViewController+Ext.swift in Sources */,
 				7015E39224FD44960023D3EB /* AppDelegate.swift in Sources */,
+				7015E3CF24FE927D0023D3EB /* TDAlertVC.swift in Sources */,
 				7015E3C524FD7A720023D3EB /* TDTextField.swift in Sources */,
 				7015E3B124FD49720023D3EB /* TDTitleLabel.swift in Sources */,
 				7015E39424FD44960023D3EB /* SceneDelegate.swift in Sources */,

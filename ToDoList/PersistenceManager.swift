@@ -9,7 +9,7 @@
 import UIKit
 
 enum PersistenceType {
-    case add, remove
+    case add, remove, update
 }
 
 enum PersistenceManager {
@@ -30,9 +30,12 @@ enum PersistenceManager {
                     switch actionType {
                     case .add:
                         guard !retrievedCategories.contains(category) else {
-                            completed(.alreadyExist)
+                            completed(.categoryAlreadyExists)
                             return
                         }
+                        retrievedCategories.append(category)
+                    case .update:
+                        retrievedCategories.removeAll { $0.name == category.name }
                         retrievedCategories.append(category)
                     case .remove:
                         retrievedCategories.removeAll { $0.name == category.name }

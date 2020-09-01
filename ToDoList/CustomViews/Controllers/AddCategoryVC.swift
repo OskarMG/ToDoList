@@ -28,6 +28,9 @@ class AddCategoryCV: TDAddVC {
             dismiss(animated: true)
             let category = Category(name: textField.text!, items: [])
             delegate?.save(category: category)
+            return
         }
+        
+        self.presentTDAlertOnMainThread(title: "TextField is Empty", message: "Please introduce a new category.", buttonTitle: "Ok")
     }
 }

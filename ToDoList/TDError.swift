@@ -12,5 +12,6 @@ import Foundation
 enum TDError: String, Error {
     case couldNotSave           = "Could not save Category."
     case couldNotRetriveData    = "Could not retrive categories."
-    case alreadyExist           = "Category already exists."
+    case categoryAlreadyExists  = "Category already exists."
+    case taskITemAlreadyExists  = "Task Item already exists."
 }

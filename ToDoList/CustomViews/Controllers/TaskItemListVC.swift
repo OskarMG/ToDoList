@@ -9,18 +9,19 @@
 import UIKit
 
 protocol TaskItemListVCDelegate: class {
-    func save(item: Item)
+    func saveNew(item: Item)
 }
 
 class TaskItemListVC: UIViewController {
     
     let tableView       = UITableView()
     var taskItemList    = [Item]()
+    var parentCategory: Category!
     
-    
-    init(itemList: [Item]) {
+    init(Category: Category) {
         super.init(nibName: nil, bundle: nil)
-        self.taskItemList = itemList
+        self.parentCategory = Category
+        self.taskItemList   = Category.items
     }
     
     required init?(coder: NSCoder) {
@@ -36,6 +37,7 @@ class TaskItemListVC: UIViewController {
     }
 
     private func configure() {
+        title = parentCategory.name
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -63,6 +65,40 @@ class TaskItemListVC: UIViewController {
             self.present(addTaskItemVC, animated: true)
         }
     }
+    
+    func updateExistingItem() {
+        parentCategory.items = taskItemList
+        PersistenceManager.update(category: parentCategory, actionType: .update) {[weak self] (error) in
+            guard let self = self else { return }
+            guard let error = error else {
+                self.updateItemList()
+                return
+            }
+            self.presentTDAlertOnMainThread(title: "Ups something wen't wrong 😅", message: error.rawValue, buttonTitle: "Ok")
+        }
+    }
+    
+    func updateItemList() {
+        PersistenceManager.retriveCategories {[weak self] (result) in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let categories):
+                
+                let categoryResult = categories.filter { (Category) -> Bool in
+                    return Category.name == self.parentCategory.name
+                }
+                
+                guard let items = categoryResult.first?.items else { return }
+                self.taskItemList = items
+                
+                DispatchQueue.main.async { self.tableView.reloadData() }
+                
+            case .failure(_):
+                self.presentTDAlertOnMainThread(title: "Ups something wen't wrong 😅", message: "Could not refresh task items.", buttonTitle: "Ok")
+            }
+        }
+    }
 }
 
 
@@ -80,13 +116,35 @@ extension TaskItemListVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        taskItemList[indexPath.row].done.toggle()
+        updateExistingItem()
+    }
+    
 }
 
 
 extension TaskItemListVC: TaskItemListVCDelegate {
-    func save(item: Item) {
+    func saveNew(item: Item) {
+    
+        guard !taskItemList.contains(item) else {
+            presentTDAlertOnMainThread(title: "Something wen't wrong 😅", message: TDError.taskITemAlreadyExists.rawValue, buttonTitle: "Ok")
+            return
+        }
         
-        print(item)
+        parentCategory.items.append(item)
+        
+        PersistenceManager.update(category: parentCategory, actionType: .update) {[weak self] (error) in
+            guard let self = self else { return }
+            guard let error = error else {
+                self.updateItemList()
+                return
+            }
+            self.presentTDAlertOnMainThread(title: "Ups something wen't wrong 😅", message: error.rawValue, buttonTitle: "Ok")
+        }
+
     }
     
     
