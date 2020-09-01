@@ -12,7 +12,7 @@ class CategoryCell: UITableViewCell {
     
     static let reuseID = "CategoryCell"
     
-    let categoryName = TDTitleLabel(textAlignment: .left, fontSize: 16)
+    let categoryName = TDTitleLabel(textAlignment: .left, fontSize: 20)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,13 +33,13 @@ class CategoryCell: UITableViewCell {
         addSubview(categoryName)
         
         accessoryType           = .disclosureIndicator
-        let padding: CGFloat    = 12
+        let padding: CGFloat    = 20
         
         NSLayoutConstraint.activate([
             categoryName.centerYAnchor.constraint(equalTo: centerYAnchor),
             categoryName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             categoryName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
-            categoryName.heightAnchor.constraint(equalToConstant: 32)
+            categoryName.heightAnchor.constraint(equalToConstant: 24)
         ])
     }
     

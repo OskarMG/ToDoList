@@ -12,11 +12,23 @@ class AddCategoryCV: TDAddVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureItems()
+        configureUIElements()
     }
     
+    private func configureUIElements() {
+        self.cancelButton.set(backgroundColor: .systemPurple, title: "Cancel")
+        self.saveButton.set(backgroundColor: .systemGreen, title: "Save")
+    }
     
-    private func configureItems() {
-        
+    override func cancelButtonTapped() {
+        dismiss(animated: true)
+    }
+    
+    override func saveButtonTapped() {
+        if isTextEntered {
+            dismiss(animated: true)
+            let category = Category(name: textField.text!, items: [])
+            delegate?.save(category: category)
+        }
     }
 }
