@@ -38,7 +38,6 @@ class TDTextField: UITextField {
         autocorrectionType          = .no
         returnKeyType               = .go
         
-        placeholder                 = "New category"
     }
 
 }

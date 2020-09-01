@@ -18,7 +18,6 @@ class TDAddVC: UIViewController {
     let cancelButton    = TDButton()
     let saveButton      = TDButton()
     
-    weak var delegate: CategoryListVCDelegate!
     var tdTitle: String?
     var tdMessage: String?
     
@@ -58,7 +57,7 @@ class TDAddVC: UIViewController {
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
 
-    @objc func cancelButtonTapped() { }
+    @objc func cancelButtonTapped() { dismiss(animated: true) }
     @objc func saveButtonTapped() { }
     
     private func configureStackView() {

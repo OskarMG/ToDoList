@@ -23,6 +23,9 @@
 		7015E3C124FD5F9A0023D3EB /* TDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3C024FD5F9A0023D3EB /* TDButton.swift */; };
 		7015E3C324FD620E0023D3EB /* AddCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3C224FD620E0023D3EB /* AddCategoryVC.swift */; };
 		7015E3C524FD7A720023D3EB /* TDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3C424FD7A720023D3EB /* TDTextField.swift */; };
+		7015E3C924FE85D80023D3EB /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3C824FE85D80023D3EB /* ItemCell.swift */; };
+		7015E3CB24FE88070023D3EB /* TaskItemListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3CA24FE88060023D3EB /* TaskItemListVC.swift */; };
+		7015E3CD24FE8B0B0023D3EB /* AddTaskItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7015E3CC24FE8B0B0023D3EB /* AddTaskItemVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		7015E3C024FD5F9A0023D3EB /* TDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDButton.swift; sourceTree = "<group>"; };
 		7015E3C224FD620E0023D3EB /* AddCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryVC.swift; sourceTree = "<group>"; };
 		7015E3C424FD7A720023D3EB /* TDTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTextField.swift; sourceTree = "<group>"; };
+		7015E3C824FE85D80023D3EB /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		7015E3CA24FE88060023D3EB /* TaskItemListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemListVC.swift; sourceTree = "<group>"; };
+		7015E3CC24FE8B0B0023D3EB /* AddTaskItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskItemVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				7015E3A624FD45DE0023D3EB /* CategoryListVC.swift */,
+				7015E3CA24FE88060023D3EB /* TaskItemListVC.swift */,
 				7015E3BE24FD5C110023D3EB /* TDAddVC.swift */,
 				7015E3C224FD620E0023D3EB /* AddCategoryVC.swift */,
+				7015E3CC24FE8B0B0023D3EB /* AddTaskItemVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				7015E3AE24FD48F00023D3EB /* CategoryCell.swift */,
+				7015E3C824FE85D80023D3EB /* ItemCell.swift */,
 			);
 			name = CustomsCells;
 			sourceTree = "<group>";
@@ -237,13 +246,16 @@
 				7015E39424FD44960023D3EB /* SceneDelegate.swift in Sources */,
 				7015E3B624FD4D7C0023D3EB /* PersistenceManager.swift in Sources */,
 				7015E3B924FD4E310023D3EB /* TDError.swift in Sources */,
+				7015E3CB24FE88070023D3EB /* TaskItemListVC.swift in Sources */,
 				7015E3A724FD45DE0023D3EB /* CategoryListVC.swift in Sources */,
 				7015E3B324FD4B9C0023D3EB /* Item.swift in Sources */,
+				7015E3C924FE85D80023D3EB /* ItemCell.swift in Sources */,
 				7015E3AC24FD488D0023D3EB /* Category.swift in Sources */,
 				7015E3BF24FD5C110023D3EB /* TDAddVC.swift in Sources */,
 				7015E3C124FD5F9A0023D3EB /* TDButton.swift in Sources */,
 				7015E3BB24FD5A240023D3EB /* TDBodyLabel.swift in Sources */,
 				7015E3AF24FD48F00023D3EB /* CategoryCell.swift in Sources */,
+				7015E3CD24FE8B0B0023D3EB /* AddTaskItemVC.swift in Sources */,
 				7015E3C324FD620E0023D3EB /* AddCategoryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -93,6 +93,13 @@ extension CategoryListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let category =  categoryList[indexPath.row]
+        
+        let taskItemListVC      = TaskItemListVC(itemList: category.items)
+        taskItemListVC.title    = category.name
+        
+        navigationController?.pushViewController(taskItemListVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -105,7 +112,6 @@ extension CategoryListVC: UITableViewDelegate, UITableViewDataSource {
         PersistenceManager.update(category: category, actionType: .remove) {[weak self] (error) in
             guard let _ = self else { return }
             guard let error = error else { return }
-            
             print(error)
         }
     }

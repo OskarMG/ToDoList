@@ -35,7 +35,7 @@ enum PersistenceManager {
                         }
                         retrievedCategories.append(category)
                     case .remove:
-                        retrievedCategories.removeAll { $0.name.lowercased() == category.name.lowercased() }
+                        retrievedCategories.removeAll { $0.name == category.name }
                     }
                     
                     completed(save(category: retrievedCategories))

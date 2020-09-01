@@ -1,33 +1,35 @@
 //
-//  AddCategoryVC.swift
+//  AddTaskItemVC.swift
 //  ToDoList
 //
-//  Created by Oscar Martinez on 8/31/20.
+//  Created by Oscar Martinez on 9/1/20.
 //  Copyright © 2020 oscmg. All rights reserved.
 //
 
 import UIKit
 
-class AddCategoryCV: TDAddVC {
+
+class AddTaskItemVC: TDAddVC {
     
-    weak var delegate: CategoryListVCDelegate!
+    weak var delegate: TaskItemListVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUIElements()
     }
     
+    
     private func configureUIElements() {
         self.cancelButton.set(backgroundColor: .systemPurple, title: "Cancel")
         self.saveButton.set(backgroundColor: .systemGreen, title: "Save")
-        self.textField.placeholder = "New category"
+        self.textField.placeholder  = "New item"
     }
     
     override func saveButtonTapped() {
         if isTextEntered {
             dismiss(animated: true)
-            let category = Category(name: textField.text!, items: [])
-            delegate?.save(category: category)
+            let item = Item(name: textField.text!, done: false)
+            delegate?.save(item: item)
         }
     }
 }
