@@ -43,10 +43,11 @@ class TaskItemListVC: UIViewController {
     
     private func configureTableView() {
         view.addSubview(tableView)
-        tableView.frame         = view.bounds
-        tableView.rowHeight     = 70
-        tableView.delegate      = self
-        tableView.dataSource    = self
+        tableView.frame             = view.bounds
+        tableView.rowHeight         = 70
+        tableView.tableFooterView   = UIView(frame: CGRect.zero)
+        tableView.delegate          = self
+        tableView.dataSource        = self
         tableView.register(ItemCell.self, forCellReuseIdentifier: ItemCell.reuseID)
     }
     
@@ -66,19 +67,18 @@ class TaskItemListVC: UIViewController {
         }
     }
     
-    func updateExistingItem() {
-        parentCategory.items = taskItemList
+    func update() {
         PersistenceManager.update(category: parentCategory, actionType: .update) {[weak self] (error) in
             guard let self = self else { return }
             guard let error = error else {
-                self.updateItemList()
+                self.refreshItemList()
                 return
             }
             self.presentTDAlertOnMainThread(title: "Ups something wen't wrong 😅", message: error.rawValue, buttonTitle: "Ok")
         }
     }
     
-    func updateItemList() {
+    func refreshItemList() {
         PersistenceManager.retriveCategories {[weak self] (result) in
             guard let self = self else { return }
             
@@ -110,17 +110,24 @@ extension TaskItemListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ItemCell.reuseID) as! ItemCell
-        
         let itemTask = taskItemList[indexPath.row]
         cell.set(item: itemTask)
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         taskItemList[indexPath.row].done.toggle()
-        updateExistingItem()
+        parentCategory.items = taskItemList
+        update()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        taskItemList.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .left)
+        parentCategory.items = taskItemList
+        update()
     }
     
 }
@@ -128,24 +135,12 @@ extension TaskItemListVC: UITableViewDelegate, UITableViewDataSource {
 
 extension TaskItemListVC: TaskItemListVCDelegate {
     func saveNew(item: Item) {
-    
         guard !taskItemList.contains(item) else {
             presentTDAlertOnMainThread(title: "Something wen't wrong 😅", message: TDError.taskITemAlreadyExists.rawValue, buttonTitle: "Ok")
             return
         }
-        
+    
         parentCategory.items.append(item)
-        
-        PersistenceManager.update(category: parentCategory, actionType: .update) {[weak self] (error) in
-            guard let self = self else { return }
-            guard let error = error else {
-                self.updateItemList()
-                return
-            }
-            self.presentTDAlertOnMainThread(title: "Ups something wen't wrong 😅", message: error.rawValue, buttonTitle: "Ok")
-        }
-
+        update()
     }
-    
-    
 }

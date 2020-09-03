@@ -14,7 +14,7 @@ enum PersistenceType {
 
 enum PersistenceManager {
     
-    static let defaults = UserDefaults.standard
+    static private let defaults = UserDefaults.standard
     
     enum Keys {
         static let categories = "categories"
